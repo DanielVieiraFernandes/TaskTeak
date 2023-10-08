@@ -11,7 +11,8 @@ import {
   FlatList,
   ImageBackground,
   KeyboardAvoidingView,
-  Platform
+  Platform,
+  ScrollView
 } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import Checkbox from 'expo-checkbox'
@@ -81,7 +82,7 @@ export default function Tarefas() {
   const Navigation = useNavigation()
 
   const handlePress = () => {
-    Navigation.navigate('home')
+    Navigation.navigate('login')
   }
 
   return (
@@ -126,6 +127,7 @@ export default function Tarefas() {
           setModalVisible(!modalVisible)
         }}
       >
+       <ScrollView>
        <View style={styles.modalVisible}>
           <View style={styles.containerModal}>
           <View style={styles.headModal}>
@@ -151,6 +153,7 @@ export default function Tarefas() {
                 }}><Text style={styles.textTouchableOpacity}>Criar</Text></TouchableOpacity>
           </View>
        </View>
+       </ScrollView>
       </Modal>
       </KeyboardAvoidingView>
       <View style={styles.containerButton}>
@@ -186,10 +189,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff', 
     borderWidth: 0.5,
     alignItems: 'center',
+    gap: 30
   },
   modalVisible: {
     flex: 1,
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
   TouchableOpacityButton: {
     backgroundColor: '#3d41c1',
@@ -303,7 +307,7 @@ const styles = StyleSheet.create({
   textArea: {
     flexDirection: 'column',
     justifyContent: 'flex-end',
-    margin: 20
+    margin: 30
   },
   containerMain: {
     flex: 1,

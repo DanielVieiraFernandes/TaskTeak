@@ -6,12 +6,10 @@ import Routes from './routes'
 export default function App() {
 
   return (
-    <NavigationContainer>
     <View style={styles.container}>
       <StatusBar hidden />
       <Routes />
     </View>
-  </NavigationContainer>
   )
   
   }
