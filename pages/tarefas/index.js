@@ -15,8 +15,10 @@ import {
 } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import Checkbox from 'expo-checkbox'
-import { Ionicons, AntDesign } from '@expo/vector-icons';
-export default function Index() {
+import { Ionicons, AntDesign } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
+import * as Animatable from 'react-native-animatable'
+export default function Tarefas() {
   const [modalVisible, setModalVisible] = useState(false)
   const [data, setData] = useState([])
   const [textInput, setTextInput] = useState('')
@@ -76,20 +78,28 @@ export default function Index() {
     )
   }
 
+  const Navigation = useNavigation()
+
+  const handlePress = () => {
+    Navigation.navigate('home')
+  }
+
   return (
     <ImageBackground
     
-    source={require('./img/corno.png')}
+    source={require('../img/corno.png')}
     style={{flex:1, resizeMode: 'cover'}}
     >
       <View
        style={styles.container}>
       <View style={styles.containerHead}>
         <View style={styles.imageContainer}>
-          <Image style={styles.imageContain} source={require('./img/eu.png')}></Image>
+          <Image style={styles.imageContain} source={require('../img/eu.png')}></Image>
         </View>
        <View style={styles.iconReturn}>
-       <Ionicons name="return-up-back" size={34} color="white" />
+      <TouchableOpacity animation='zoomInUp' onPress={handlePress}> 
+        <Ionicons name="return-up-back" size={34} color="white" />
+        </TouchableOpacity>
        </View>
       </View>
       <View style={styles.textArea}>
