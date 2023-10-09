@@ -1,6 +1,7 @@
 import Tarefas from '../pages/tarefas/index'
 import Home from '../pages/home'
 import Login from '../pages/login'
+import Cadastro from '../pages/cadastro'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
@@ -20,13 +21,18 @@ export default function Routes() {
        
        />
        <Stack.Screen
-        name="tarefas"
+        name="Tarefas"
         component={Tarefas}
         options={{ headerShown: false }} 
       />
        <Stack.Screen
-        name='login'
+        name='Login'
         component={Login}
+        options={{headerShown: false}}
+     />
+     <Stack.Screen
+        name='Cadastro'
+        component={Cadastro}
         options={{headerShown: false}}
      />
     </Stack.Navigator>

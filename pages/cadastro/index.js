@@ -2,7 +2,7 @@ import { StyleSheet, View, ImageBackground, Image, Text, TextInput, TouchableOpa
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import * as Animatable from 'react-native-animatable'
-export default function Login() {
+export default function Cadastro() {
 
   const [inputPassword, setPassword] = useState('')
   const [inputEmail, setEmail] = useState('')
@@ -38,11 +38,11 @@ export default function Login() {
       <ScrollView 
        keyboardShouldPersistTaps="always"
        style={styles.containerLogin}
-        >
+       >
        <Animatable.View animation='slideInUp' >
        <View style={styles.containerTexts}>
-          <Text style={styles.textLogin}>Log in</Text> 
-          <Text style={styles.textLoginMini}>Faça o login para continuar</Text>
+          <Text style={styles.textLogin}>Cadastro</Text>
+          <Text style={styles.textLoginMini}>É sua primeira vez? faça o cadastro!</Text>
         </View>
        <View style={styles.containerInput}>
         <View style={styles.contentMain}>
@@ -58,12 +58,12 @@ export default function Login() {
         </View>
        <View style={styles.containerButton}>
          <TouchableOpacity style={styles.buttonLogin} onPress={handlePress}>
-          <Text style={styles.textTouch}>Login</Text>
+          <Text style={styles.textTouch}>Criar Conta</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.buttonCadastro} onPress={() => {
-            Navigator.navigate("Cadastro")
+            Navigator.navigate('Login')
           }}>
-          <Text style={styles.textTouchTwo}>Criar Conta</Text>
+          <Text style={styles.textTouchTwo}>Login</Text>
           </TouchableOpacity>
          </View>
        </Animatable.View>
